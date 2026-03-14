@@ -13,7 +13,7 @@ st.write("Enter applicant's information to predict credit risk (1: Good, 0: Bad)
 col1, col2 = st.columns(2)
 
 with col1:
-    age = st.number_input("Age", min_value=18, max_value=80, value=30)
+    age = st.number_input("Age", min_value=18, max_value=90, value=30)
     sex = st.selectbox("Sex", options=['female', 'male'])
     job = st.number_input("Job (0-3)", min_value=0, max_value=3, value=1)
     housing = st.selectbox("Housing", options=['free', 'own', 'rent'])
