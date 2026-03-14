@@ -1,176 +1,51 @@
 # Credit Risk Prediction System
 
-## Project Overview
-This project is a **Credit Risk Prediction System** built using **Python and Machine Learning**.  
-The goal of this project is to predict whether a credit applicant is a **Good Risk** or **Bad Risk** based on their financial and personal information.
+[![Live App](https://creditrisk-ccuj9aappyqh3wpnb9bsocb.streamlit.app/)
 
-Several machine learning models were trained and compared, and the best-performing model was selected for prediction. A **Streamlit web application** was also developed to allow users to interact with the model and make predictions easily.
-
----
+## Overview
+Credit Risk Prediction System using Python & ML to classify applicants as **Good Risk** or **Bad Risk**. Includes a **Streamlit web app** for interactive predictions.
 
 ## Dataset
-The project uses the **German Credit Dataset**, which contains information about loan applicants.
+- German Credit Dataset, 1000 records, 11 features  
+- Target: `Risk`  
+- File: `german_credit_data.csv`  
 
-**File Used**
-- german_credit_data.csv
+## Preprocessing
+- Removed missing/duplicate data, dropped irrelevant columns  
+- Label encoding of categorical features  
+- Split into features (X) and target (y)  
+- Encoders saved as `.pkl` for prediction
 
-**Dataset Size**
-- Records: 1000  
-- Features: 11  
+## Features
+- Age, Sex, Job, Housing, Saving accounts, Checking account, Credit amount, Duration  
+- Target: Risk
 
-**Features in Dataset**
-- Age
-- Sex
-- Job
-- Housing
-- Saving accounts
-- Checking account
-- Credit amount
-- Duration
-- Purpose
-- Risk (target variable)
+## Models & Performance
+| Model                  | Accuracy |
+|------------------------|----------|
+| Decision Tree          | 0.58     |
+| Random Forest          | 0.62     |
+| Extra Trees Classifier | 0.67 ✅  |
+| XGBoost                | 0.67     |
 
----
+**Saved Model:** `best_et_model.pkl`
 
-## Data Cleaning and Preprocessing
-Before training the models, the dataset was cleaned and prepared.
+## Streamlit App
+- Inputs: Age, Gender, Job, Housing, Saving/Checking account, Credit amount, Duration  
+- Output: Good Risk / Bad Risk  
+- **Live Demo:** [Click Here](https://creditrisk-ccuj9aappyqh3wpnb9bsocb.streamlit.app/)
 
-Steps performed:
-- Removed missing values
-- Checked and removed duplicate records
-- Dropped unnecessary column (`Unnamed: 0`)
-- Encoded categorical features using **LabelEncoder**
-- Split the dataset into **features (X)** and **target variable (y)**
-
-Encoded variables include:
-- Sex
-- Housing
-- Saving accounts
-- Checking account
-- Risk
-
-The trained encoders were saved as `.pkl` files for later use in prediction.
-
----
-
-## Exploratory Data Analysis (EDA)
-Exploratory data analysis was performed to better understand the dataset.
-
-Key analysis performed:
-- Distribution plots for **Age, Credit Amount, and Duration**
-- Boxplots for detecting outliers
-- Count plots for categorical variables
-- Correlation heatmap for numeric features
-- Comparison of credit amount by **job and gender**
-- Risk comparison with numeric variables
-
----
-
-## Feature Selection
-The following features were used for model training:
-
-Age  
-Sex  
-Job  
-Housing  
-Saving accounts  
-Checking account  
-Credit amount  
-Duration  
-
-**Target Variable:** Risk
-
----
-
-## Model Training and Evaluation
-Multiple machine learning models were trained and tuned using **GridSearchCV**.
-
-Models tested:
-- Decision Tree
-- Random Forest
-- Extra Trees Classifier
-- XGBoost
-
-Model performance:
-
-Decision Tree Accuracy: 0.58  
-Random Forest Accuracy: 0.62  
-Extra Trees Accuracy: 0.67  
-XGBoost Accuracy: 0.67  
-
-The **Extra Trees Classifier** was selected as the final model.
-
-Saved model file:
-- best_et_model.pkl
-
----
-
-## Streamlit Web Application
-A **Streamlit application** was developed to make the model interactive.
-
-Users can enter the following information:
-- Age
-- Gender
-- Job category
-- Housing status
-- Saving account status
-- Checking account status
-- Credit amount
-- Loan duration
-
-The application predicts whether the applicant is a **Good Risk** or **Bad Risk**.
-
----
-
-## Running the Streamlit App
-
-Install required libraries:
-
-pip install streamlit pandas numpy scikit-learn xgboost joblib
-
-Run the application:
-
-streamlit run app.py
-
-The application will open automatically in your browser.
-
----
-
-## Technologies Used
-
-Programming Language:
-- Python
-
-Libraries:
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- XGBoost
-- Joblib
-- Streamlit
-
-Tools:
-- Jupyter Notebook
-- Git
-- GitHub
-- Streamlit
-
----
+## Tech Stack
+- **Programming Languages & Libraries:** Python, Pandas, NumPy, Scikit-learn, XGBoost, Joblib, Streamlit  
+- **Tools:** Jupyter Notebook, Git, GitHub  
 
 ## Future Improvements
-- Improve model performance using feature engineering
-- Add explainable AI methods (SHAP or LIME)
-- Deploy the Streamlit application online
-- Add more financial attributes for better predictions
-
----
+- Feature engineering for higher accuracy  
+- Explainable AI with SHAP/LIME  
+- Add more financial variables  
+- Enhance Streamlit UI & charts  
 
 ## Author
-Hafsa Naz  
-BS Artificial Intelligence Student  
-Dawood University of Engineering and Technology  
-
-LinkedIn:  
-https://www.linkedin.com/in/hafsa-naz-
+**Hafsa Naz**  
+BS Artificial Intelligence, Dawood University of Engineering and Technology  
+[LinkedIn](https://www.linkedin.com/in/hafsa-naz-) | [Live App](https://creditrisk-ccuj9aappyqh3wpnb9bsocb.streamlit.app/)
