@@ -1,163 +1,176 @@
 # Credit Risk Prediction System
 
 ## Project Overview
+This project is a **Credit Risk Prediction System** built using **Python and Machine Learning**.  
+The goal of this project is to predict whether a credit applicant is a **Good Risk** or **Bad Risk** based on their financial and personal information.
 
-This project is a **Credit Risk Prediction System** built using **Python**.
-It predicts whether a credit applicant is **“good” or “bad”** based on their personal and financial information.
-
-The system applies multiple **machine learning algorithms** and selects the best-performing model to classify the credit risk of applicants.
+Several machine learning models were trained and compared, and the best-performing model was selected for prediction. A **Streamlit web application** was also developed to allow users to interact with the model and make predictions easily.
 
 ---
 
 ## Dataset
+The project uses the **German Credit Dataset**, which contains information about loan applicants.
 
-The project uses the **German Credit Data** dataset which contains information about applicants and their credit details.
+**File Used**
+- german_credit_data.csv
 
-### File Used
+**Dataset Size**
+- Records: 1000  
+- Features: 11  
 
-* `german_credit_data.csv` – contains applicant information and credit risk labels.
-
-### Dataset Size
-
-* **Records:** 1000
-* **Columns:** 11
-
-### Features
-
-| Feature          | Description                      |
-| ---------------- | -------------------------------- |
-| Age              | Age of the applicant             |
-| Sex              | Gender of the applicant          |
-| Job              | Job category                     |
-| Housing          | Housing status (own, rent, free) |
-| Saving accounts  | Savings account status           |
-| Checking account | Checking account status          |
-| Credit amount    | Credit amount requested          |
-| Duration         | Duration of credit in months     |
-| Purpose          | Purpose of the credit            |
-| Risk             | Credit risk (good / bad)         |
+**Features in Dataset**
+- Age
+- Sex
+- Job
+- Housing
+- Saving accounts
+- Checking account
+- Credit amount
+- Duration
+- Purpose
+- Risk (target variable)
 
 ---
 
-## Data Cleaning & Preprocessing
+## Data Cleaning and Preprocessing
+Before training the models, the dataset was cleaned and prepared.
 
-Before building the machine learning models, the dataset was cleaned and prepared.
+Steps performed:
+- Removed missing values
+- Checked and removed duplicate records
+- Dropped unnecessary column (`Unnamed: 0`)
+- Encoded categorical features using **LabelEncoder**
+- Split the dataset into **features (X)** and **target variable (y)**
 
-### Steps Performed
+Encoded variables include:
+- Sex
+- Housing
+- Saving accounts
+- Checking account
+- Risk
 
-* Removed missing values
-* Checked for duplicate records
-* Dropped unnecessary column (`Unnamed: 0`)
-* Encoded categorical variables using **LabelEncoder**
-* Split dataset into **features (X)** and **target (y)**
-
-Encoded features include:
-
-* Sex
-* Housing
-* Saving accounts
-* Checking account
-* Risk (target variable)
+The trained encoders were saved as `.pkl` files for later use in prediction.
 
 ---
 
 ## Exploratory Data Analysis (EDA)
+Exploratory data analysis was performed to better understand the dataset.
 
-Exploratory analysis was performed to understand the dataset.
-
-### Analysis Performed
-
-* Histogram distribution of **Age, Credit Amount, and Duration**
-* Boxplots to identify **outliers**
-* Count plots for **categorical features**
-* Correlation heatmap for numeric variables
-* Analysis of **Credit Amount by Job and Gender**
-* Risk comparison with numeric variables
+Key analysis performed:
+- Distribution plots for **Age, Credit Amount, and Duration**
+- Boxplots for detecting outliers
+- Count plots for categorical variables
+- Correlation heatmap for numeric features
+- Comparison of credit amount by **job and gender**
+- Risk comparison with numeric variables
 
 ---
 
 ## Feature Selection
+The following features were used for model training:
 
-Selected features used for training the model:
+Age  
+Sex  
+Job  
+Housing  
+Saving accounts  
+Checking account  
+Credit amount  
+Duration  
 
-```
-Age
-Sex
-Job
-Housing
-Saving accounts
-Checking account
-Credit amount
-Duration
-```
-
-**Target Variable**
-
-```
-Risk
-```
+**Target Variable:** Risk
 
 ---
 
-## Model Training & Evaluation
-
+## Model Training and Evaluation
 Multiple machine learning models were trained and tuned using **GridSearchCV**.
 
-| Model                  | Accuracy |
-| ---------------------- | -------- |
-| Decision Tree          | 0.58     |
-| Random Forest          | 0.62     |
-| Extra Trees Classifier | 0.67     |
-| XGBoost Classifier     | 0.67     |
+Models tested:
+- Decision Tree
+- Random Forest
+- Extra Trees Classifier
+- XGBoost
 
-**Best Model:** Extra Trees Classifier
+Model performance:
 
-The trained model was saved as:
+Decision Tree Accuracy: 0.58  
+Random Forest Accuracy: 0.62  
+Extra Trees Accuracy: 0.67  
+XGBoost Accuracy: 0.67  
 
-```
-best_et_model.pkl
-```
+The **Extra Trees Classifier** was selected as the final model.
+
+Saved model file:
+- best_et_model.pkl
+
+---
+
+## Streamlit Web Application
+A **Streamlit application** was developed to make the model interactive.
+
+Users can enter the following information:
+- Age
+- Gender
+- Job category
+- Housing status
+- Saving account status
+- Checking account status
+- Credit amount
+- Loan duration
+
+The application predicts whether the applicant is a **Good Risk** or **Bad Risk**.
+
+---
+
+## Running the Streamlit App
+
+Install required libraries:
+
+pip install streamlit pandas numpy scikit-learn xgboost joblib
+
+Run the application:
+
+streamlit run app.py
+
+The application will open automatically in your browser.
 
 ---
 
 ## Technologies Used
 
-### Programming Language
+Programming Language:
+- Python
 
-Python
+Libraries:
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- XGBoost
+- Joblib
+- Streamlit
 
-### Libraries
-
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
-* XGBoost
-* Joblib
-
-### Tools
-
-* Jupyter Notebook
-* Git
-* GitHub
+Tools:
+- Jupyter Notebook
+- Git
+- GitHub
+- Streamlit
 
 ---
 
 ## Future Improvements
-
-* Build a **web application using Streamlit**
-* Add more financial features to improve prediction
-* Use **feature engineering** to enhance model performance
-* Implement **model explainability techniques (SHAP / LIME)**
+- Improve model performance using feature engineering
+- Add explainable AI methods (SHAP or LIME)
+- Deploy the Streamlit application online
+- Add more financial attributes for better predictions
 
 ---
 
 ## Author
+Hafsa Naz  
+BS Artificial Intelligence Student  
+Dawood University of Engineering and Technology  
 
-**Hafsa Naz**
-BS Artificial Intelligence Student
-Dawood University of Engineering & Technology
-
-🔗 LinkedIn
+LinkedIn:  
 https://www.linkedin.com/in/hafsa-naz-
