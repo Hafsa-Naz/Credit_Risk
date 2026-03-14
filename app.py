@@ -3,13 +3,8 @@ import joblib
 import streamlit as st
 
 # Load trained model
-import os
-import joblib
+model = joblib.load("models/best_et_model.pkl")
 
-BASE_DIR = os.path.dirname(__file__)
-model_path = os.path.join(BASE_DIR, "model", "best_et_model.pkl")
-
-model = joblib.load(model_path)
 st.set_page_config(page_title="Credit Risk Predictor", page_icon="💳", layout="wide")
 st.title("💳 Credit Risk Prediction")
 st.write("Enter applicant's information to predict credit risk (1: Good, 0: Bad)")
