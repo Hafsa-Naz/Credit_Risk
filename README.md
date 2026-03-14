@@ -1,8 +1,5 @@
 # Credit Risk Prediction System
 
-[![Live App](https://creditrisk-ccuj9aappyqh3wpnb9bsocb.streamlit.app/)
-
-## Overview
 Credit Risk Prediction System using Python & ML to classify applicants as **Good Risk** or **Bad Risk**. Includes a **Streamlit web app** for interactive predictions.
 
 ## Dataset
